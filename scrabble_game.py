@@ -23,7 +23,9 @@ def update_points():
       player_to_points[player] = player_points
       #print(player_points)
 
-  print(player_to_points)
+  #print(player_to_points)
+  for key, value in player_to_points.items():
+    print(f"{key} have {value} points.")
 ###  
 def play_word(player, word):
   if player in player_to_words.keys():
@@ -43,7 +45,9 @@ def another_player():
     player_name()
     another_player()
   else:
-    print("Today players: ", list(player_to_words.keys()))
+    print("Today players: ")
+    for players in player_to_words:
+      print("- ",players)
 
 def player_add_word():
   for player in player_to_words:
@@ -55,8 +59,10 @@ def player_add_word():
 ### call functions ###
 player_name()
 another_player()
+print("--------")
 player_add_word()
 player_add_word()
+print("--------")
 update_points()
 
     
